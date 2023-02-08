@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <title>Jadwal Perkuliahan</title>
+</head>
+
+<body>
+
+  <h2>Jadwal Perkuliahan Semester Gasal 2022-2023</h2>
+  <table id="table_id" class="table table-striped">
+    <thead>
+      <th>Kode</th>
+      <th>Makul</th>
+      <th>Kelas</th>
+      <th>Dosen</th>
+      <th>Hari</th>
+      <th>Jam</th>
+      <th>Ruang</th>
+    </thead>
+  </table>
+
+
+  <script src="js/jquery.js"></script>
+  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <!-- <script src="script.js"></script> -->
+  <script>
+    $(document).ready(function () {
+      $('#table_id').DataTable({
+        ajax: {
+          url: 'jadwal.json',
+          dataType: 'json'
+        },
+        columns: [
+          { data: 'kode' },
+          { data: 'makul' },
+          { data: 'kelas' },
+          { data: 'dosen' },
+          { data: 'hari' },
+          { data: 'jam' },
+          { data: 'ruang' },
+        ]
+      });
+    });
+  </script>
+</body>
+
+</html>
