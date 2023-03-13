@@ -17,13 +17,14 @@
       <span class="tanggal"></span>
       <div class="card">
         <div class="card-header">
-          <h2>Jadwal Perkuliahan Semester Gasal 2022-2023</h2>
+          <h2>Jadwal Perkuliahan Semester Genap 2022-2023</h2>
         </div>
         <div class="card-body">
           <table id="jadwal" class="table table-bordered  flex-md-nowrap">
             <thead>
               <th data-priority="1">Kode</th>
               <th data-priority="2">Makul</th>
+              <th data-priority="">Kons</th>
               <th data-priority="3">Kelas</th>
               <th data-priority="4">Dosen</th>
               <th data-priority="5">Hari</th>
@@ -69,12 +70,13 @@
     $(document).ready(function () {
       var jadwal = $('#jadwal').DataTable({
         ajax: {
-          url: 'jadwal.json',
+          url: 'genap-22-23.json',
           dataType: 'json'
         },
         columns: [
           { data: 'kode' },
           { data: 'makul' },
+          { data: 'kons' },
           { data: 'kelas' },
           { data: 'dosen' },
           { data: 'hari' },
@@ -83,7 +85,7 @@
         ],
         pageLength: 25,
         search: {
-          search: '3p52'
+          search: '4p52'
         },
         responsive: {
           breakpoints: [
